@@ -24,9 +24,9 @@ Sceptre. The available keys are listed below.
 - [template_key_prefix](#template_key_prefix) _(optional)_
 - [required_version](#required_version) _(optional)_
 
-Sceptre will only check for and uses the above keys in environment config
-files, but any others added by the user are made available via
-`stack_group_confg` attribute on `Stack()`.
+Sceptre will only check for and uses the above keys in StackGroup config files
+and are directly accessible from Stack(). Any other keys added by the user are
+made available via `stack_group_confg` attribute on `Stack()`.
 
 ### profile
 
