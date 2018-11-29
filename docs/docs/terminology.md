@@ -7,8 +7,9 @@ title: Terminology
 
 The following terms will be used though the rest of the Sceptre documentation:
 
-- **Sceptre Project**: The directory which stores the top level config
-  directory.
+## Sceptre Project:
+
+The directory which stores the top level config directory.
 
 - **Command Path** The Stack or StackGroup that you want to execute a Sceptre
   command against. For example, if you want to launch `vpc.yaml` in the example
@@ -35,7 +36,7 @@ The following terms will be used though the rest of the Sceptre documentation:
                     └── vpc.yaml
   ```
 
-- **Sceptre Context**
+## Sceptre Context
 
 Unless you go looking in the code, or you use Sceptre as a python module, you
 won't need to worry about `SceptreContext`.
@@ -50,7 +51,7 @@ a module you will need to create a `SceptreContext` and pass it an absolute
 path to your Sceptre project directory and the "command_path" - the path you
 are going to execute commands on.
 
-- **Sceptre Plan**
+## Sceptre Plan
 
 As with `SceptreContext` you shouldn't need to interact with `SceptrePlan` most
 of the time.
@@ -66,7 +67,7 @@ plan = SceptrePlan(context)
 responses = plan.launch()
 ```
 
-- **SceptrePlanExecutor**
+## SceptrePlanExecutor
 
 You won't be able to interact with the `SceptrePlanExecutor` directly but this
 part of the code is responsible for taking a `SceptrePlan` and ensuring all
@@ -75,7 +76,7 @@ executor algorithm focuses on correctness over maximal concurrency. It know
 what to execute and when based on a `StackGraph` which is created when
 a `SceptrePlan` is created.
 
-- **StackGraph**
+## StackGraph
 
 A `StackGraph` is a Directed Acyclic Graph where the nodes hold `Stack` objects
 and the edges represent a "depends on" relationship. The graph is created when
@@ -85,7 +86,7 @@ Previously, in `v1` stack dependencies were available between `Environments`
 and even within `Environments` they could be temperamental, this concept
 resolves this issue.
 
-- **StackActions**
+## StackActions
 
 The `StackActions` class takes a `Stack` object and uses the data held on the
 `Stack` when calling AWS. StackActions is used by the `SceptrePlanExecutor`. To
